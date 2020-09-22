@@ -1,16 +1,15 @@
 class SessionsController < ApplicationController
 
     def create
-        # find_or_create_by
+        user = User.find_by_username(params[:user][:username])
+        if !user.nil? && !!user.authenticate(params[:user][:password])
+            render json: UserSerializer.new(user)
+        else
+            render json: {message: "No user found"}
+        end
     end
 
     def destroy
-    end
-
-    private
-
-    def user_params
-        params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
     end
 
 end
