@@ -7,7 +7,7 @@ This repo includes the code for the Rails backend of the application.
 ## This application was built with:
 
 - **Ruby on Rails ~> api_only**
-- **Vanilla JavaScript**
+- **React**
 
 # Installation
 If you would like to run this application, you will have to:
